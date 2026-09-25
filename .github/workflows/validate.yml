@@ -26,6 +26,8 @@ jobs:
         run: terraform init -backend=false
       - name: Validate configuration
         run: terraform validate
+      - name: Run mock-provider architecture tests
+        run: terraform test
       - name: Evidence summary
         run: |
           echo "## OCX-ARCH-001" >> "$GITHUB_STEP_SUMMARY"
