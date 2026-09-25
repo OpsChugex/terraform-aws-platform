@@ -1,0 +1,1 @@
+.terraform/\n**/.terraform/\nmodules/**/.terraform.lock.hcl\n*.tfstate\n*.tfstate.*\ncrash.log\n

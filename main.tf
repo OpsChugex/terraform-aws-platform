@@ -1,15 +1,29 @@
 terraform {
   required_version = ">= 1.6.0"
-  required_providers { aws = { source = "hashicorp/aws", version = "~> 5.0" } }
+
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
 }
 
-provider "aws" { region = var.aws_region }
+provider "aws" {
+  region = var.aws_region
+}
 
-# Intentionally safe reference only. Resources stay disabled until
-# enable_reference_deployment is explicitly set to true after cost approval.
 module "platform" {
-  count      = var.enable_reference_deployment ? 1 : 0
   source     = "./modules/platform"
+  enabled    = var.enable_reference_deployment
   name       = var.name
   cidr_block = var.cidr_block
+}
+
+output "reference_deployment_enabled" {
+  value = var.enable_reference_deployment
+}
+
+output "platform_summary" {
+  value = module.platform.summary
 }
