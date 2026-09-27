@@ -58,3 +58,15 @@ Changing that flag is not, by itself, an approval to deploy. A real deployment s
 ## Limitations
 
 This repository is not a customer environment and does not claim production availability, customer outcomes, recovery times or cost savings. It demonstrates an auditable infrastructure pattern and its validation controls.
+
+---
+
+## Related OpsChugex engineering
+
+For context on the engineering area represented in this repository:
+
+- [Cloud Architecture](https://opschugex.com/cloud-architecture)
+- [AWS Consulting](https://opschugex.com/aws-consulting)
+- [Engineering Proof](https://opschugex.com/engineering-proof)
+
+The repository classification, scope and limitations remain as documented above.
